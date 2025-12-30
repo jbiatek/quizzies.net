@@ -2117,6 +2117,74 @@ Error message and password prompt
 
 <li>Welcome</li>
 
+<li>Whose Annual Ricky Was It Anyway?, Connected #582</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q01</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q01/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q01/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q02</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q02/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q02/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q03</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q03/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q03/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q04</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q04/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q04/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q05</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q05/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q05/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q06</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q06/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q06/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q07</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q07/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q07/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q08</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q08/A</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q08/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q09</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q09/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q09/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q10</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q10/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q10/A2</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q11</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q11/A1</li>
+
+<li>Whose Annual Ricky Was It Anyway?, Connected #582/Q11/A2</li>
+
 <li>Whose Ricky Was It Anyway?, Connected #413</li>
 
 <li>Whose Ricky Was It Anyway?, Connected #413/Q1</li>
@@ -4249,6 +4317,74 @@ Error message and password prompt
 {"title":"Unlock Member Content","caption":"Batch Encryption","created":"20220819224506467","filter":"[tag[Locked]]","modified":"20220825202404839","tags":"","type":"text/vnd.tiddlywiki","text":"\\define free-fields() stephen-points federico-points published\n\\define free-prefix() $:/free/\n\nEnter the password here to unlock all members-only content:\n\n\u003C$encryptTiddler passwordTiddler1=\"$:/temp/password1\" passwordTiddler2=\"$:/temp/password2\" filter={{!!filter}}>\n\u003C$edit-text tag=\"input\" tiddler=\"$:/temp/password1\" placeholder=\"password\" default=\"\" col=\"4\"/> \u003C$button message=\"tw-decrypt-tiddler\">\nUnlock\n\u003C/$button>\n\u003Cp class=\"super-secret\">\n\n\u003C$edit-text tag=\"input\" tiddler=\"$:/temp/password2\" placeholder=\"confirm password\" default=\"\" col=\"4\"/>\n\n\u003C$button message=\"tw-encrypt-tiddler\">\n1. Encrypt & save free stuff\n\n\u003C$list filter={{!!filter}}>\n\u003C$let freeVersion={{{ [is[current]addprefix\u003Cfree-prefix>] }}}>\n\u003C$list filter=\u003C\u003Cfree-fields>> variable=\"theField\">\n\u003C$action-setfield $tiddler=\u003C\u003CfreeVersion>> $index=\u003C\u003CtheField>> $value={{{ [is[current]get\u003CtheField>] }}} />\n\u003C/$list>\n\u003C/$let>\n\u003C/$list>\n\u003C/$button>\n\nSaved data: \u003C$list filter=\"[prefix\u003Cfree-prefix>]\">\u003C$link/> \u003C/$list>\n\n\u003C$button>\n2. Put back free stuff\n\n\u003C$list filter=\"[prefix\u003Cfree-prefix>]\">\n\u003C$let encryptedOne={{{ [is[current]removeprefix\u003Cfree-prefix>] }}} >\n\u003C$list filter=\u003C\u003Cfree-fields>> variable=\"theField\">\n\u003C$action-setfield $tiddler=\u003C\u003CencryptedOne>> $field=\u003C\u003CtheField>> $value={{{ [is[current]getindex\u003CtheField>] }}} />\n\u003C/$list>\n\u003C/$let>\n\u003C/$list>\n\u003C/$button>\n\n\u003C$list filter=\"[subfilter{!!filter}]\">\n\u003C$list filter=\u003C\u003Cfree-fields>> variable=\"theField\">\n\u003C$list filter=\"[is[current]has\u003CtheField>]\" variable=\"_\">\n\u003C$link/>.\u003C\u003CtheField>> = \u003C$text text={{{ [is[current]get\u003CtheField>] }}} />\u003Cbr>\n\u003C/$list>\n\u003C/$list>\n\u003C/$list>\n\n\u003C$button>\n3. ⚠ Clear temp data\n\u003C$action-deletetiddler $filter=\"[prefix\u003Cfree-prefix>]\" />\n\u003C/$button>\n\n\u003C/p>\n\u003C/$encryptTiddler>\n\nThe password can be found in Connected Pro #409: Take the correct answer to every question asked in the Pro segment at the very end of the episode and put them together, in order, with no spaces.\n\n\u003Cul>\n\u003C$list filter=\"[subfilter{!!filter}tag[Game]]\">\u003Cli>\u003C$link/> \u003C$list filter=\"[is[current]!encrypted[]]\" variable=\"_\">🔒\u003C/$list>\u003C$list filter=\"[is[current]encrypted[]]\" variable=\"_\">👍\u003C/$list>\u003C/li>\u003C/$list>\n\u003C/ul>","revision":"0","bag":"default"}
 ,
 {"title":"Welcome","created":"20220824034129455","modified":"20240411033707364","type":"text/vnd.tiddlywiki","text":"This is {{$:/SiteTitle}}, a collection of information about the quiz game occasionally inflicted upon Stephen Hackett and Federico Viticci by quiz master/tyrant Myke Hurley on \u003Ca href=\"https://relay.fm/connected/\" target=\"_blank\">Connected\u003C/a>.\n\n\u003C\u003C\u003C.tc-big-quote\nI hit the button, it's time for The Quizzies. I also bought \u003Ca href=\"http://thequizzies.com\" target=\"_blank\">thequizzies.com\u003C/a>, couldn't believe it was available. I have it now. It's time for The Quizzies.\u003Cbr>\u003Cbr>\n— \u003Ca href=\"https://overcast.fm/+FXx69yxls/00:39\" target=\"_blank\">Myke Hurley\u003C/a>, unknowingly setting in motion the creation of this website\n\u003C\u003C\u003C\n\nOne fun thing about The Quizzies is that they can happen anywhere, at any time, including in members-only episodes. To unlock the full power of this wiki, head over to [[this page to decrypt the members-only data|Unlock Member Content]]. \n\nAnd, of course, the real fun only starts once there's //math//, so don't miss the [[scores and stats|Scores and Stats]].\n\n!! Recently completed games\n\n\u003Cul>\u003C$list filter=\"[tag[Game]!sort[published]limit[3]]\">\u003Cli>\u003C$link/> \u003C$list filter=\"[is[current]!encrypted[]]\">🔒\u003C/$list>\u003C/li>\u003C/$list>\u003C/ul>\n\n","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582","created":"20251230154134255","modified":"20251230181647092","published":"20251211","tags":"Game [[Whose Ricky Was It Anyway?]] [[2025 Season]]","type":"text/vnd.tiddlywiki","text":"\u003C\u003C\u003C.tc-big-quote\nStephen is also now sending me, honestly, threatening, messages at this point, so we're going great.\n\n— Myke Hurley\n\nI love you and control the bank account.\n\n— Stephen Hackett\n\n\u003C\u003C\u003C\n\nA big news week delayed The Quizzies \u003Ca href=\"https://overcast.fm/+FXx6kkALU/00:37:20\" target=\"_blank\">to another week\u003C/a>, so now it's time to look back at the other big Connected game, The Rickies! This time, it's about the annual picks. 20 points for guessing the guesser, with a bonus 10 points for guessing the year. As always, //extensive// coverage of The Rickies can be found over at \u003Ca href=\"https://rickies.net\" target=\"_blank\">Rickipedia\u003C/a>, the objectively best site for that sort of thing. \u003Ca href=\"https://rickies.net/#A%20streaming%20service%20announced%20as%20Apple%20Video:%5B%5BThe%20iPhone%207S%20and%207S%2B%20will%20look%20like%20the%207%20and%207%2B%2C%20not%20this%20edge%20to%20edge%20unicorn%20phone%20that%20has%20been%20rumored%5D%5D%20%5B%5BA%20streaming%20service%20announced%20as%20Apple%20Video%5D%5D%20%5B%5BApple%20will%20name%20a%20successor%20to%20Steve%20Dowling%2C%20former%20head%20of%20public%20relations%20at%20Apple%5D%5D%20%5B%5BAn%20iPhone%20Pro%20with%20Apple%20Pencil%20support%2C%202%20Apple%20Pencils%5D%5D%20%5B%5BApple%20launches%20at%20least%20one%20iPad%20model%20with%20a%20new%20display%20technology%5D%5D%20%5B%5BThe%20new%20Mac%20Pro%20will%20be...%5D%5D%20%5B%5BNo%20in-person%20WWDC%202021%5D%5D%20%5B%5BWorkflow%202%20will%20appear%20as%20a%20system%20feature%20or%20app%5D%5D%20%5B%5BApple%20will%20launch%20its%20own%20podcast%20content%20beyond%20its%20existing%20deal%20with%20Oprah%5D%5D%20%5B%5BA%20Mac%20gets%20a%20screen%20that%20supports%20touch%20and%2For%20Apple%20Pencil%20input%5D%5D%20%5B%5BApple%20will%20release%20its%20biggest%20iPad%20ever%20with%20a%20display%20of%20at%20least%2016%20inches...%5D%5D\" target=\"_blank\">Read about everything Rickipedia has collected about every one of these answers here!\u003C/a>\n\n{{||$:/GameTemplate}}","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q01","answer":"\u003Ca target=\"_blank\" href=\"https://rickies.net/#The%20iPhone%207S%20and%207S%2B%20will%20look%20like%20the%207%20and%207%2B%2C%20not%20this%20edge%20to%20edge%20unicorn%20phone%20that%20has%20been%20rumored\">Stephen, 2017\u003C/a>","created":"20251230174952567","modified":"20251230175351736","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"The iPhone 7S and 7S+ will look like the 7 and 7+, not this edge to edge unicorn phone that has been rumored","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q01/A1","answer":"Stephen, 2017","answerer":"Federico","created":"20251230175032027","federico-points":"30","modified":"20251230175641148","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q01]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q01/A2","answer":"Stephen, 2016","answerer":"Stephen","created":"20251230175033723","modified":"20251230175639102","stephen-points":"20","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q01]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q02","answer":"\u003Ca target=\"_blank\" href=\"https://rickies.net/#A%20streaming%20service%20announced%20as%20Apple%20Video\">Federico, 2018\u003C/a>","created":"20251230175423678","modified":"20251230175719806","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"A streaming service announced as Apple Video","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q02/A1","answer":"Myke, 2018","answerer":"Stephen","created":"20251230175615538","modified":"20251230175705098","stephen-points":"0","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q02]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q02/A2","answer":"Myke, 2020","answerer":"Federico","created":"20251230175616265","federico-points":"0","modified":"20251230175708857","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q02]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q03","answer":"\u003Ca target=\"_blank\" href=\"https://rickies.net/#Apple%20will%20name%20a%20successor%20to%20Steve%20Dowling%2C%20former%20head%20of%20public%20relations%20at%20Apple\">Federico, 2020\u003C/a>","created":"20251230175800583","modified":"20251230175831114","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"Apple will name a successor to Steve Dowling, former head of public relations at Apple","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q03/A1","answer":"Federico 2019","answerer":"Stephen","created":"20251230175811333","modified":"20251230175850846","stephen-points":"20","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q03]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q03/A2","answer":"Federico 2021","answerer":"Federico","created":"20251230175812953","federico-points":"20","modified":"20251230175856098","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q03]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q04","answer":"\u003Ca href=\"https://rickies.net/#An%20iPhone%20Pro%20with%20Apple%20Pencil%20support%2C%202%20Apple%20Pencils\" target=\"_blank\">Myke, 2017\u003C/a>","created":"20251230175900381","modified":"20251230180027603","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"An iPhone Pro with Apple Pencil support, 2 Apple Pencils, the standard and a short one that supports the iPhone and iPad mini","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q04/A1","answer":"Myke, 2018","answerer":"Stephen","created":"20251230175959884","modified":"20251230180143188","stephen-points":"20","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q04]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q04/A2","answer":"Myke, 2022","answerer":"Federico","created":"20251230180000568","federico-points":"20","modified":"20251230180144998","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q04]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q05","answer":"\u003Ca href=\"https://rickies.net/#Apple%20launches%20at%20least%20one%20iPad%20model%20with%20a%20new%20display%20technology\" target=\"_blank\">Federico, 2021\u003C/a>","created":"20251230180152622","modified":"20251230180251841","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"Apple launches at least one iPad model with a new display technology","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q05/A1","answer":"Federico, 2022","answerer":"Federico","created":"20251230180240334","federico-points":"20","modified":"20251230180306749","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q05]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q05/A2","answer":"Stephen, 2020","answerer":"Stephen","created":"20251230180240991","modified":"20251230180310063","stephen-points":"0","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q05]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q06","answer":"\u003Ca href=\"https://rickies.net/#The%20new%20Mac%20Pro%20will%20be...\" target=\"_blank\">Myke, 2022\u003C/a>","created":"20251230180348579","modified":"20251230180443480","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"The new Mac Pro will be smaller, not a cube shape, feature no support for the current MPX modules and/or will allow for some form of expandability outside of Thunderbolt. It will be only be available in one color.","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q06/A1","answer":"Myke, 2020","answerer":"Federico","created":"20251230180421431","federico-points":"20","modified":"20251230180521270","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q06]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q06/A2","answer":"Myke, 2022","answerer":"Stephen","created":"20251230180422200","modified":"20251230180518592","stephen-points":"30","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q06]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q07","answer":"\u003Ca href=\"https://rickies.net/#No%20in-person%20WWDC%202021\" target=\"_blank\">Stephen, 2021\u003C/a>","created":"20251230180545106","modified":"20251230180644354","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"No in-person WWDC","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q07/A1","answer":"Stephen, 2021","answerer":"Federico","created":"20251230180647020","federico-points":"30","modified":"20251230180705437","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q07]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q07/A2","answer":"Stephen, 2022","answerer":"Stephen","created":"20251230180647833","modified":"20251230180706754","stephen-points":"20","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q07]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q08","answer":"\u003Ca href=\"https://rickies.net/#Workflow%202%20will%20appear%20as%20a%20system%20feature%20or%20app\" target=\"_blank\">Federico, 2018\u003C/a>","created":"20251230180750907","modified":"20251230180821177","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"Workflow 2 will appear as a system feature or app","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q08/A","answer":"Federico, 2018","answerer":"Federico","created":"20251230180837194","federico-points":"30","modified":"20251230180858982","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q08]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q08/A2","answer":"Federico, 2018","answerer":"Stephen","created":"20251230180839621","modified":"20251230180849276","stephen-points":"30","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q08]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q09","answer":"\u003Ca href=\"https://rickies.net/#Apple%20will%20launch%20its%20own%20podcast%20content%20beyond%20its%20existing%20deal%20with%20Oprah\" target=\"_blank\">Stephen, 2020\u003C/a>","created":"20251230180940998","modified":"20251230181002455","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"Apple will launch its own podcast content beyond its existing deal with Oprah","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q09/A1","answer":"Myke, 2016","answerer":"Stephen","created":"20251230181005523","modified":"20251230181053860","stephen-points":"0","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q09]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q09/A2","answer":"Stephen, 2023","answerer":"Federico","created":"20251230181007529","federico-points":"20","modified":"20251230181104940","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q09]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q10","answer":"\u003Ca href=\"https://rickies.net/#A%20Mac%20gets%20a%20screen%20that%20supports%20touch%20and%2For%20Apple%20Pencil%20input\" target=\"_blank\">Myke, 2021\u003C/a>","created":"20251230181144620","modified":"20251230181218917","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"A Mac gets a screen that supports touch and/or Apple Pencil input","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q10/A1","answer":"Myke, 2022","answerer":"Stephen","created":"20251230181228102","modified":"20251230181245610","stephen-points":"20","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q10]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q10/A2","answer":"Myke, 2021","answerer":"Federico","created":"20251230181228885","federico-points":"30","modified":"20251230181244252","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q10]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q11","answer":"\u003Ca href=\"https://rickies.net/#Apple%20will%20release%20its%20biggest%20iPad%20ever%20with%20a%20display%20of%20at%20least%2016%20inches...\" target=\"_blank\">Federico, 2023\u003C/a>","created":"20251230181303195","modified":"20251230181345713","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582]] Question","type":"text/vnd.tiddlywiki","text":"Apple will release its biggest iPad ever with a display of at least 16 inches. It won't be OLED, it'll have the front-facing camera on the landscape side, and two USB-C ports at least. It'll be called iPad Studio.","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q11/A1","answer":"Federico, 2023","answerer":"Stephen","created":"20251230181349614","modified":"20251230181423880","stephen-points":"30","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q11]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
+,
+{"title":"Whose Annual Ricky Was It Anyway?, Connected #582/Q11/A2","answer":"Federico, 2023","answerer":"Federico","created":"20251230181351031","federico-points":"30","modified":"20251230181425271","tags":"[[Whose Annual Ricky Was It Anyway?, Connected #582/Q11]] Answer","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
 ,
 {"title":"Whose Ricky Was It Anyway?, Connected #413","created":"20220831171556202","modified":"20240331035554455","published":"20220831","tags":"Game [[2022 Season]] [[Whose Ricky Was It Anyway?]]","type":"text/vnd.tiddlywiki","text":"\u003C\u003C\u003C.tc-big-quote\nI recommend you go with your hearts, but you'll get the points either way.\n\n— Myke Hurley\n\u003C\u003C\u003C\n\nIn an already busy Rickies episode, Myke also squeezes in \u003Ca href=\"https://overcast.fm/+FXx4UJ2RE/17:08\" target=\"_blank\">a round of The Quizzies\u003C/a> (after some \u003Ca href=\"https://overcast.fm/+FXx4UJ2RE/07:26\" target=\"_blank\">very kind words for this site\u003C/a>). The topic: September Rickies of years past. 100 points for each correct answer, plus 100 more for a clean sweep. More about those games \u003Ca href=\"https://rickies.net/#2019%20Fall%20Rickies:%5B%5B2019%20Fall%20Rickies%5D%5D%20%5B%5B2020%20September%20Rickies%5D%5D\" target=\"_blank\">can be found on Rickipedia\u003C/a>.\n\n{{||$:/GameTemplate}}","revision":"0","bag":"default"}
 ,
